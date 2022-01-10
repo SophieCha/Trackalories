@@ -93,7 +93,7 @@ class User extends Dbh {
           //déboggueur:
           //echo 'le mdp est incorrect : saisi= '.$pwdInput.' in BDD= '.$result;
           $_SESSION['error']='error password';
-          header("location: {$_SERVER['HTTP_ORIGIN']}/Kilos2/index.php");
+          header("location: {$_SERVER['HTTP_ORIGIN']}/Trackalories/index.php");
           return false;
         }
       //! look after !!!$mdpcheck = password_verify($mdp, $result['password']);
@@ -113,18 +113,18 @@ class User extends Dbh {
             $_SESSION['password']=$this->password;
             $this->session = 'connected';
             //echo $this->session;
-            header("location: {$_SERVER['HTTP_ORIGIN']}/Kilos2/user-page.php");
+            header("location: {$_SERVER['HTTP_ORIGIN']}/Trackalories/user-page.php");
             
             //Déboggueur
             //$this->displayInfoUser('size');
             } else{
             $_SESSION['error']='Incorrect password, please try again!';
-            header("location: {$_SERVER['HTTP_ORIGIN']}/Kilos2/index.php");
+            header("location: {$_SERVER['HTTP_ORIGIN']}/Trackalories/index.php");
             }
         }else{
 
             $_SESSION['error']='This email was not found, please sign up first!';
-            header("location: {$_SERVER['HTTP_ORIGIN']}/Kilos2/index.php");
+            header("location: {$_SERVER['HTTP_ORIGIN']}/Trackalories/index.php");
 
         }}
 
@@ -188,7 +188,7 @@ class User extends Dbh {
     }else{
       
       $_SESSION['error']='This email is already in use, login instead 😉!';
-      header("location: {$_SERVER['HTTP_ORIGIN']}/Kilos2/index.php");
+      header("location: {$_SERVER['HTTP_ORIGIN']}/Trackalories/index.php");
     };
   }
 
@@ -196,7 +196,7 @@ class User extends Dbh {
     //si pas de session->index + msg erreur;
     if(!isset ($_SESSION['email'])){
       $_SESSION['error'] =' ⛔ You cannot access to this page! ⛔';
-      header("location: {$_SERVER['HTTP_ORIGIN']}/Kilos2/index.php");
+      header("location: {$_SERVER['HTTP_ORIGIN']}/Trackalories/index.php");
     }else{
       $this->userExist();
       $this->setValues();
