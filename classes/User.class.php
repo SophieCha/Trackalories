@@ -25,24 +25,9 @@ class User extends Dbh {
 
     /* -- paramètre nécessaire pour instanciation de l'objet User : adresse email!--*/
   public function __construct($email){
-        //if(!isset($_SESSION['email'])){
+        
           $this->email=$email;
-         
-          
-        //}else{
-          //echo $email;
-          //$this->email=$_SESSION['email'];
-          //$stmt = parent::connect()->prepare($this->sql);
-         //$stmt->execute([$this->email]);
-          //echo 'session'.$this->email;
-          //$emailFound = $stmt->fetchAll();
-          //$this->emailFound = $emailFound;
-         // $this->setValues();
-          //$this->displayInfoUser('firstname');
-         //header("location: {$_SERVER['HTTP_ORIGIN']}/Kilos2/user-page.php");
-
-
-       // }
+      
       }   
         
 

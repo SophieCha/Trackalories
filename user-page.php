@@ -58,11 +58,10 @@ require_once('./assets/templates/header.php');
                 <?php $aliments = new Posts(); ?>
                 <h6 class="card-title text-center">You ate for 
                     <?= $cal=$aliments->getCalories($_SESSION['email'],$date);
-                     echo $cal . 'Kcal';
-                     if ($cal > $idealKcal){
-                       echo '<h6>Hum maybe it\'s time for a break with food today 💔</h6>';
-                     }
-                     ?></h6>
+                     echo $cal . 'Kcal';?></h6>
+                <h6 class="card-title text-center">Recommended : <?php echo $avecSession->idealKcal(); ?></h6>
+                    
+
                 
     <?php if($aliments->getAliment()): ?>
       <?php if($aliments->getEmailDate($_SESSION['email'], $date)): ?>
@@ -84,11 +83,7 @@ require_once('./assets/templates/header.php');
         
         
         <?php endforeach ; ?>
-        <div class="text-center">
-<button type="button" class="my-5 btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPostModal">
-  Add aliment 🍔 
-</button>
-</div>
+        
 
     <?php else : ?>
         <p class="mx-auto mt-5 text-center">You need to eat somedthing!</p>
@@ -96,6 +91,11 @@ require_once('./assets/templates/header.php');
       <?php endif; ?>
     <?php endif; ?> 
               </div>
+              <div class="text-center">
+<button type="button" class="my-5 btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPostModal">
+  Add aliment 🍔 
+</button>
+</div>
             </div>
           </div>
          

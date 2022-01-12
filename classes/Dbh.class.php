@@ -3,8 +3,8 @@
 class Dbh {
     
   private $host = "localhost";
-  private $user = "root";
-  private $pwd = "root";
+  private $user = "admin";
+  private $pwd = "admin";
   private $dbName = "trackilos";
 
   public function connect() {
